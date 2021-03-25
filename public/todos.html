@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our todo-app</title>
+
+    <head>
+        <link rel="stylesheet" href="todo-app.css">
+        <link rel="stylesheet" href="reset.css">
+    </head>
+</head>
+
+<body>
+    <main class="TodoPageMain">
+        <article>
+            <h1 class="TodoPage-title">My Todo-list</h1>
+            <section class="AddTodo">
+                <input class="AddTodo-text" type="text" placeholder="What's next?">
+                <input class="AddTodo-date" type="date">
+                <input class="AddTodo-button" type="button" value="Add">
+            </section>
+            <section class="TodoSection">
+                <div class=TodoSectionTitle>
+                    <p class="TodoSectionTitle-text">Due Today</h2>
+                    <p class="TodoSectionTitle-remainingCount">1/2</p>
+                </div>
+                <ul>
+                    <li class="TodoItem">
+                        <label class="TodoItem-container">
+                            <input class="TodoItem-checkbox" type="checkbox">
+                            Submit SaaS 201 project
+                            <p class="TodoItem-overDueLabel">Overdue</p>
+                            <a class="TodoItem-delete" href="javascript:void(0)">
+                                <img src="trashcan.svg">
+                            </a>
+                        </label>
+                    </li>
+                    <li class="TodoItem">
+                        <label class="TodoItem-container">
+                            <input class="TodoItem-checkbox" type="checkbox">
+                            Call samsung Care
+                            <a class="TodoItem-delete" href="javascript:void(0)">
+                                <img src="trashcan.svg">
+                            </a>
+                        </label>
+                    </li>
+                </ul>
+            </section>
+            <section class="TodoSection">
+                <div class=TodoSectionTitle>
+                    <p class="TodoSectionTitle-text">Due Tomorrow</h2>
+                    <p class="TodoSectionTitle-remainingCount">0/2</p>
+                </div>
+                <ul>
+                    <li class="TodoItem">
+                        <label class="TodoItem-container">
+                            <input class="TodoItem-checkbox" type="checkbox">
+                            Refill groceries
+                            <p class="TodoItem-overDueLabel">Overdue</p>
+                            <a class="TodoItem-delete" href="javascript:void(0)">
+                                <img src="trashcan.svg">
+                            </a>
+                        </label>
+                    </li>
+                    <li class="TodoItem">
+                        <label class="TodoItem-container">
+                            <input class="TodoItem-checkbox" type="checkbox">
+                            Submit semester project
+                            <p class="TodoItem-overDueLabel">Overdue</p>
+                            <a class="TodoItem-delete" href="javascript:void(0)">
+                                <img src="trashcan.svg">
+                            </a>
+                        </label>
+                    </li>
+                </ul>
+            </section>
+            <section class="TodoSection">
+                <div class=TodoSectionTitle>
+                    <p class="TodoSectionTitle-text">Remaining</h2>
+                    <p class="TodoSectionTitle-remainingCount">01</p>
+                </div>
+                <ul>
+                    <li class="TodoItem">
+                        <label class="TodoItem-container">
+                            <input class="TodoItem-checkbox" type="checkbox">
+                            Wish friend's birthday
+                            <p class="TodoItem-overDueLabel">Overdue</p>
+                            <a class="TodoItem-delete" href="javascript:void(0)">
+                                <img src="trashcan.svg">
+                            </a>
+                        </label>
+                    </li>
+
+                </ul>
+            </section>
+
+        </article>
+    </main>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<main class="todo-app-website-wrapper">
+    <div class="todo-app-wrapper">
+      <h2 class="todo-app-main-heading">My To-Do List</h2>
+      <%= form_with(url: "/todos", method: "post", class: "todo-app-add-todo-wrapper") do %>
+        <input class="todo-app-text-input" type="text" placeholder="What's next?" name="todo_text">
+        <input class="todo-app-date-input" type="date" name="due_date">
+        <input class="todo-app-submit-new-todo-button" type="submit" value="Add">
+      <% end %>
+
+      <%= render partial: "todo-section", locals: {
+        section_title: "Overdue",
+        todos: @todos.overdue.incomplete,
+        show_due_date: true
+      } %>
+
+      <%= render partial: "todo-section", locals: {
+        section_title: "Due Today",
+        todos: @todos.due_today,
+        show_due_date: false
+      } %>
+
+      <%= render partial: "todo-section", locals: {
+        section_title: "Due Later",
+        todos: @todos.due_later,
+        show_due_date: true
+      } %>
+
+    </div>
+  </main> -->
