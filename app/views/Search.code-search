@@ -1,0 +1,35 @@
+# Query: .png
+# Flags: CaseSensitive RegExp
+# ContextLines: 1
+
+7 results - 2 files
+
+app/views/test.html:
+  36                              <a class="TodoItem-delete" href="javascript:void(0)">
+  37:                                 <img src="trashcan.svg">
+  38                              </a>
+
+  45                              <a class="TodoItem-delete" href="javascript:void(0)">
+  46:                                 <img src="trashcan.svg">
+  47                              </a>
+
+  63                              <a class="TodoItem-delete" href="javascript:void(0)">
+  64:                                 <img src="trashcan.svg">
+  65                              </a>
+
+  73                              <a class="TodoItem-delete" href="javascript:void(0)">
+  74:                                 <img src="trashcan.svg">
+  75                              </a>
+
+  91                              <a class="TodoItem-delete" href="javascript:void(0)">
+  92:                                 <img src="trashcan.svg">
+  93                              </a>
+
+config/webpacker.yml:
+  23      - .jpeg
+  24:     - .png
+  25      - .gif
+
+  43      - .module.css
+  44:     - .png
+  45      - .svg

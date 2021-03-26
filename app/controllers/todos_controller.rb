@@ -1,6 +1,9 @@
-class TodosController < ApplicationController   #projectcontroller class, mostly inspired from projectName. 
-    def index   #now we are defining what index does... so it reders a plain text as following. 
-        render plain: Todo.order(:due_date).map {|object| object.to_pleasant_string}.join("\n") #order the output by due_date
+class TodosController < ApplicationController   #project controller class, mostly inspired from projectName. 
+    def index   
+        # render plain: Todo.order(:due_date).map {|object| object.to_pleasant_string}.join("\n") #order the output by due_date
+        # we want index to render index.html.erb sitting in views folder and not directly from the data base using Todo object. 
+        #for this we have to create a file as "index.html" in views folder insider a user created sub folder todos (because we are going with TodosController)
+        render "index"
     end
 
     def show

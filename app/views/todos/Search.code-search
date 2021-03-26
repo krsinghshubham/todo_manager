@@ -1,0 +1,15 @@
+# Query: .png
+# Flags: CaseSensitive RegExp
+
+7 results - 2 files
+
+app/views/test.html:
+  37:                                 <img src="trashcan.svg">
+  46:                                 <img src="trashcan.svg">
+  64:                                 <img src="trashcan.svg">
+  74:                                 <img src="trashcan.svg">
+  92:                                 <img src="trashcan.svg">
+
+config/webpacker.yml:
+  24:     - .png
+  44:     - .png
