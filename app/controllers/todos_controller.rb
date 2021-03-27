@@ -1,5 +1,4 @@
 class TodosController < ApplicationController #project controller class, mostly inspired from projectName.
-
   def index
     # render plain: Todo.order(:due_date).map {|object| object.to_pleasant_string}.join("\n") #order the output by due_date
     # we want index to render index.html.erb sitting in views folder and not directly from the data base using Todo object.
@@ -25,6 +24,16 @@ class TodosController < ApplicationController #project controller class, mostly 
     # render plain: response_text
     redirect_to todos_path
   end
+
+  def update
+    id = params[:id]
+    completed = params[:completed]
+    selected_todo = Todo.find(id)
+    selected_todo.completed = completed
+    selected_todo.save!
+    redirect_to todos_path
+  end
+  
 end
 
 # Params = As you might have guessed, params is an alias for the parameters method. params comes from ActionController::Base, which is accessed by your application via ApplicationController. Specifically, params refers to the parameters being passed to the controller via a GET or POST request.

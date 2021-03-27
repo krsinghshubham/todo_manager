@@ -21,6 +21,10 @@ class Todo < ActiveRecord::Base #Todo inherited all the functionalites of Active
     all.where(completed: true)
   end
 
+  def self.incomplete
+    all.where(completed: false)
+  end
+
   def self.show_list
     puts "My Todo-list\n\n"
 
