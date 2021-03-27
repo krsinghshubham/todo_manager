@@ -33,7 +33,14 @@ class TodosController < ApplicationController #project controller class, mostly 
     selected_todo.save!
     redirect_to todos_path
   end
-  
+
+  def destroy
+    id=params[:id]
+    selected_todo=Todo.find(id)
+    selected_todo.destroy #this is an active reocrd method to remove/destroy a record form a table
+    redirect_to todos_path
+  end
+
 end
 
 # Params = As you might have guessed, params is an alias for the parameters method. params comes from ActionController::Base, which is accessed by your application via ApplicationController. Specifically, params refers to the parameters being passed to the controller via a GET or POST request.
