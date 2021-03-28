@@ -1,6 +1,9 @@
 # L4 SOLUTION, BUILD A TodoLit CLI app
 
 class Todo < ActiveRecord::Base #Todo inherited all the functionalites of Active record.
+  belongs_to :user
+  #considers there is a "users" table and Todo table contains "user_id"
+
   def due_today?
     due_date == Date.today
   end
