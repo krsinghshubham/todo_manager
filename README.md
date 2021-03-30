@@ -1,24 +1,8 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This application is live on: https://shubham-todo-manager-saas-201.herokuapp.com/
+Features: 
+  New user sign up and sign in. 
+  User signed in till he did not get signed out. 
+  No two users can look up or chagne another user's todo. 
+  Only valid todo's task and date date is allowed. 
+  All other standard security features have been considered. 
