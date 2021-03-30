@@ -10,11 +10,18 @@
     font-weight: lighter;
     margin-left: 5px;
 }
-.UserHeader{
+
+.UserHeader {
     background-color: lightgrey;
     font-size: 14px;
     margin-bottom: 10px;
     padding: 10px;
     display: flex;
     justify-content: space-between;
+}
+
+.Flash-error {
+    color: darkred;
+    margin-bottom: 20px;
+    font-size: 16px;
 }

@@ -1,11 +1,13 @@
 # L4 SOLUTION, BUILD A TodoLit CLI app
 
 class Todo < ActiveRecord::Base #Todo inherited all the functionalites of Active record.
-  belongs_to :user
   #considers there is a "users" table and Todo table contains "user_id"
-  def self.of_user(user)
-    all.where(user_id: user.id) #all occureneces of the todo for the selected user.
-  end
+  belongs_to :user
+
+  #not needed becuase we used has many association. so something like current_user.todo will work as fine.
+  # def self.of_user(user)
+  #   all.where(user_id: user.id) #all occureneces of the todo for the selected user.
+  # end
 
   def due_today?
     due_date == Date.today

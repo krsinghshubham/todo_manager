@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
       session[:current_user_id] = user.id #when we are signed we are setting the session with current user id.
       render plain: " you are signed in "
     else
-      render plain: "user-id/password combination was wrong"
+      flash[:error] = "Your login attempt was invalid. Please retry."
+      redirect_to new_sessions_path
     end
   end
 
