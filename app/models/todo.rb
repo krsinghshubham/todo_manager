@@ -1,6 +1,9 @@
 # L4 SOLUTION, BUILD A TodoLit CLI app
 
 class Todo < ActiveRecord::Base #Todo inherited all the functionalites of Active record.
+  validates :todo_text, presence: true
+  validates :todo_text, length: {minimum: 2}
+  validates :due_date, presence: true
   #considers there is a "users" table and Todo table contains "user_id"
   belongs_to :user
 

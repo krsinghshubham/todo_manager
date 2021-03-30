@@ -14,16 +14,21 @@ class TodosController < ApplicationController
 
   def create
     todo_text = params[:todo_text]
-    due_date = DateTime.parse(params[:due_date])
-    new_todo = Todo.create!(
+    # due_date = DateTime.parse(params[:due_date])
+    due_date = params[:due_date]
+    # new_todo = Todo.create!( #becuase we want to raise exceptions for blank todos alonge.
+    new_todo = Todo.new(
       todo_text: todo_text,
       due_date: due_date,
       completed: false,
       user_id: current_user.id,
     )
-    # response_text = "Hey , your new todo created with id= #{new_todo.id}"
-    # render plain: response_text
-    redirect_to todos_path
+    if new_todo.save
+      redirect_to todos_path
+    else
+      flash[:error] = new_todo.errors.full_messages.join(", ") #full message is provided by rails activeMethods:RailsValidation we are using.
+      redirect_to todos_path # on every new path, flash[:error] cache gets destroyed.
+    end
   end
 
   def update

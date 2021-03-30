@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if (user && user.authenticate(params[:password])) # also password only if user exists.
       session[:current_user_id] = user.id #when we are signed we are setting the session with current user id.
-      render plain: " you are signed in "
+      redirect_to todos_path
     else
       flash[:error] = "Your login attempt was invalid. Please retry."
       redirect_to new_sessions_path
