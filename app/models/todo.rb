@@ -3,6 +3,9 @@
 class Todo < ActiveRecord::Base #Todo inherited all the functionalites of Active record.
   belongs_to :user
   #considers there is a "users" table and Todo table contains "user_id"
+  def self.of_user(user)
+    all.where(user_id: user.id) #all occureneces of the todo for the selected user.
+  end
 
   def due_today?
     due_date == Date.today
