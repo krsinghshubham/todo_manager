@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get "/signin" => "sessions#new", as:  :new_sessions
   post "/signin" => "sessions#create",  as: :sessions
+  delete "signout" => "sessions#destroy", as: :destroy_session
 end
 
 # get "todos", to: "todos#index" #for get_type_request <url_name>, route it to todos(defined by todos_controller, as naming convention), there define what index does)
