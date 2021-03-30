@@ -6,13 +6,18 @@ class UsersController < ApplicationController
   end
 
   def create
-    User.create!(
+    new_user = User.create!(
       first_name: params[:first_name],
       last_name: params[:last_name],
       email: params[:email],
       password: params[:password],
     )
-    
-    redirect_to todos_path
+    if new_user.save
+      session[:current_user_id] = new_user.id
+      redirect_to "/"
+    else
+      flash[:error] = "The Details Filled Are Invalid, Please Try Again!"
+      redirect_to new_user_path
+    end
   end
 end
