@@ -1,8 +1,6 @@
-class TodosController < ApplicationController #project controller class, mostly inspired from projectName.
+class TodosController < ApplicationController
   def index
     # render plain: Todo.order(:due_date).map {|object| object.to_pleasant_string}.join("\n") #order the output by due_date
-    # we want index to render index.html.erb sitting in views folder and not directly from the data base using Todo object.
-    #for this we have to create a file as "index.html" in views folder insider a user created sub folder todos (because we are going with TodosController)
     render "index"
   end
 
@@ -35,12 +33,11 @@ class TodosController < ApplicationController #project controller class, mostly 
   end
 
   def destroy
-    id=params[:id]
-    selected_todo=Todo.find(id)
+    id = params[:id]
+    selected_todo = Todo.find(id)
     selected_todo.destroy #this is an active reocrd method to remove/destroy a record form a table
     redirect_to todos_path
   end
-
 end
 
 # Params = As you might have guessed, params is an alias for the parameters method. params comes from ActionController::Base, which is accessed by your application via ApplicationController. Specifically, params refers to the parameters being passed to the controller via a GET or POST request.
