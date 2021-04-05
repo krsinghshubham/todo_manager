@@ -99,7 +99,10 @@ body {
   
   
 }
-
+.TodoItem-completedText{
+  text-decoration: line-through;
+  text-decoration-color: red;
+}
 .TodoItem-delete {
   width: 16px;
   visibility: hidden;
